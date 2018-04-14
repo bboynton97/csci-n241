@@ -1,0 +1,21 @@
+html {
+  background-color: #EEE;
+  font-family: sans-serif;
+}
+
+input {
+  border-color: lightblue; /* Custom input fields */
+  border-radius: 5px; /* Custom input fields */
+  background-color: white; /* Custom input fields */
+  padding: 5px; /* More space for text */
+  margin-top: 5px; /* Makes it less cramped */
+  margin-bottom: 5px; /* Makes it less cramped */
+}
+
+#self {
+  float:left; /* Makes the colum push left */
+}
+
+h1 {
+  text-align: center;
+}

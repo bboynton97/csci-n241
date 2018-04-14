@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Whiskey Survey</title>
+  <link type="text/css" rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>What do you think of whiskey?</h1>
+  <br>
+  <form action="mailto:user@example.com" method="post" enctype="text/plain">
+    <fieldset id="self">
+      <legend>Tell us about yourself</legend>
+      <!-- "typable" element 1 -->
+      <label for="name">
+        <span>Name</span>
+        <input id="name" name="name" placeholder="Name" type="text">
+      </label>
+      <br>
+      <!-- "typable" element 2 -->
+      <label for="age">
+        <span>Age</span>
+        <input id="age" name="age" placeholder="21" type="number">
+      </label>
+      <br>
+      <!-- "typable" element 3 -->
+      <label for="loc">
+        <span>Location</span>
+        <input id="loc" name="loc" placeholder="USA" type="text">
+      </label>
+      <br><br>
+    </fieldset>
+    <fieldset id="whiskey">
+      <legend>Tell us about your whiskey</legend>
+      <!-- Radio buttons -->
+      <span>Favorite type of whiskey:</span>
+      <br>
+      <input id="type1" name="type" value="Brandy" type="radio" checked>Brandy<br>
+      <input id="type2" name="type" value="Scotch" type="radio">Scotch<br>
+      <input id="type3" name="type" value="Bourbon" type="radio">Bourbon<br>
+      <input id="type4" name="type" value="Single Malt" type="radio">Single Malt<br>
+      <input id="type5" name="type" value="Irish" type="radio">Irish<br>
+      <input id="type6" name="type" value="Blended" type="radio">Blended<br>
+      <input id="type7" name="type" value="Japanese" type="radio">Japanese<br>
+      <input id="type8" name="type" value="Rye" type="radio">Rye<br>
+      <input id="type9" name="type" value="Other" type="radio">Other<br>
+      <br>
+      <!-- Select element -->
+      <span>Favorite brand of whiskey:</span>
+      <select>
+        <option value="default">Choose one</option>
+        <option value="Jameson">Jameson</option>
+        <option value="Tullamore Dew">Tullamore Dew</option>
+        <option value="Black Bush">Black Bush</option>
+        <option value="Glenfiddich">Glenfiddich</option>
+        <option value="Speyburn">Speyburn</option>
+        <option value="Talisker">Talisker</option>
+        <option value="Aberfeldy">Aberfeldy</option>
+        <option value="Hotel Tango">Hotel Tango</option>
+        <option value="Johnnie Walker">Johnnie Walker</option>
+        <option value="Buchanan's">Buchanan's</option>
+        <option value="Templeton Rye">Templeton Rye</option>
+        <option value="Knob Creek">Knob Creek</option>
+        <option value="Jim Beam">Jim Beam</option>
+        <option value="Jack Daniels">Jack Daniels</option>
+        <option value="Crown Royal">Crown Royal</option>
+        <option value="Other">Other</option>
+      </select>
+      <br><br>
+      <!-- Checkbox options -->
+      <span>Favorite reason to drink whiskey:</span>
+      <br>
+      <input id="reason1" name="reason1" value="taste" type="checkbox" checked>Superior taste<br>
+      <input id="reason2" name="reason2" value="classy" type="checkbox">Classy drink ("gentleman's drink")<br>
+      <input id="reason3" name="reason3" value="pairing" type="checkbox">Pairs well with certain foods and cigars<br>
+      <input id="reason4" name="reason4" value="high_proof" type="checkbox">Prefered high-proof drink option<br>
+      <input id="reason5" name="reason5" value="quick_buzz" type="checkbox">Quick buzz (bad answer, don't pick this one)<br>
+      <br>
+      <label>Additional thoughts:</label><br>
+      <textarea id="textarea" name="textarea" placeholder="I think..." cols="50" rows="5"></textarea>
+    </fieldset>
+    <br>
+    <input type="submit" value="Submit Survey">&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="reset" value="Reset Form">
+  </form>
+</body>
+</html>
