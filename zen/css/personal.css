@@ -1,0 +1,133 @@
+/* Brandon Boynton - March 7th*/
+
+.light-blue {               /* requirement 8 */
+  background-color: lightblue;
+}
+
+.better-font {              /* requirement 8 */
+  font-family: Arial, Helvetica, sans-serif
+}
+
+#ex1 {              /* requirement 2 */
+  color: red;
+}
+
+#ex2 {
+  color: blue;
+}
+
+#ex3 {
+  color: purple;
+}
+
+.class1 {              /* requirement 1 */
+  margin: 5px;
+  border: 1px;
+}
+
+.class2 {
+  margin: 4px;
+  justify-content: center;
+}
+
+.class3 {
+  margin: 3px;
+}
+
+.class4 {
+  margin: 2px;
+}
+
+.class5 {
+  margin: 1px;
+}
+
+header {               /* requirement 5 */
+  text-align: center;
+  background-color: darkgrey;
+  margin-bottom: 25px;
+}
+
+footer {               /* requirement 6 */
+  text-align: center;
+  background-color: darkgrey;
+  margin-top: 25px;
+}
+
+button {               /* requirement 7 */
+  background-color: green;
+  border-radius: 5px;
+  border: 0;
+  box-shadow: none;
+  padding: 10px;
+  margin: 10px;
+}
+
+h1 {               /* requirement 3 */
+  font-weight: bold;
+}
+
+h2 {
+  font-weight: bold;
+}
+
+h3 {
+  font-weight: bold;
+}
+
+h4 {
+  font-weight: bold;
+}
+
+h5 {
+  font-weight: bold;
+}
+
+h6 {
+  font-weight: bold;
+}
+
+a {
+  color: blue;
+}
+
+a:hover {               /* requirement 4 */
+  color: red;
+}
+
+a:visited {
+  color: purple;
+}
+
+ol {
+    background: #ff9999;
+    padding: 20px;
+}
+
+ul {
+    background: #3399ff;
+    padding: 20px;
+}
+
+ol li {
+    background: #ffe5e5;
+    padding: 5px;
+    margin-left: 35px;
+}
+
+ul li {
+    background: #cce5ff;
+    margin: 5px;
+}
+
+table{
+   border: 1px solid black;
+}
+
+th {
+   border: 1px solid black;
+}
+
+td {
+   border: 1px solid black;
+}

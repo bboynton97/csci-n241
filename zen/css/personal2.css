@@ -1,0 +1,152 @@
+/* Brandon Boynton - March 7th*/
+
+.light-blue {
+  background-color: darkgrey;
+}
+
+.better-font {
+  font-family: Impact, Charcoal, sans-serif;
+  text-indent: 15px;
+  color: darkred;
+  text-align: right;
+}
+
+#ex1 {
+  color: green;
+  font-variant: small-caps;
+  font-weight: bolder;
+}
+
+#ex2 {
+  color: red;
+  font-variant-position: sub;
+  word-break: keep-all;
+
+}
+
+#ex3 {
+  color: blue;
+  font-variant-caps: unicase;
+}
+
+.class1 {
+  margin: 15px;
+}
+
+.class2 {
+  margin: 14px;
+}
+
+.class3 {
+  margin: 13px;
+}
+
+.class4 {
+  margin: 12px;
+}
+
+.class5 {
+  margin: 11px;
+}
+
+header {
+  text-align: center;
+  background-color: darkgrey;
+  margin-bottom: 25px;
+}
+
+footer {
+  text-align: center;
+  background-color: darkgrey;
+  margin-top: 25px;
+}
+
+button {
+  background-color: blue;
+  border: 0;
+  box-shadow: none;
+  padding: 5px;
+  margin: 10px;
+  color: white;
+}
+
+h1 {
+  font-size: 35px;
+  font-stretch: expanded;
+}
+
+h2 {
+  font-weight: lighter;
+}
+
+h3 {
+  font-weight: lighter;
+}
+
+h4 {
+  font-weight: lighter;
+}
+
+h5 {
+  font-weight: lighter;
+}
+
+h6 {
+  font-weight: lighter;
+}
+
+a {
+  color: green;
+}
+
+a:hover {
+  color: red;
+  font-size: 20px;
+}
+
+a:visited {
+  color: darkgreen;
+}
+
+ol {
+    background: pink;
+    padding: 5px;
+}
+
+ul {
+    background: purple;
+    padding: 2px;
+    border: 1px;
+    border-radius: 10px;
+    margin: 25px;
+    text-align: center;
+}
+
+ol li {
+    background: #ffe5e5;
+    padding: 5px;
+    margin-left: 35px;
+}
+
+ul li {
+    background: #cce5ff;
+    margin: 5px;
+}
+
+table{
+  border: 1px dashed red;
+  background-color: black;
+  color:white;
+}
+
+th {
+  border: 1px dashed red;
+  background-color: black;
+  color:white;
+}
+
+td {
+  border: 1px dashed red;
+  background-color: black;
+  color:white;
+}

@@ -1,0 +1,60 @@
+/* Added border styling to table */
+table {
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+}
+
+/* Made headers a darker color */
+th {
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  background-color: lightgray;
+}
+
+/* Added border styling to cells */
+td {
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+}
+
+/* Colors to denote am or pm times */
+.am {
+  background-color: lightblue;
+}
+
+.pm {
+  background-color: orange;
+}
+
+/* Colors for different classes of activities */
+.wake-up {
+  background-color: yellow;
+}
+
+.food {
+  background-color: lightgreen;
+}
+
+.class {
+  background-color: red;
+}
+
+.work {
+  background-color: lightblue;
+}
+
+.fun {
+  background-color: pink;
+}
+
+.sleep {
+  background-color: orange;
+}
+
+/* Style list */
+ol {
+  list-style-type: lower-roman;
+}

@@ -1,0 +1,57 @@
+@font-face { /* requirement 13 */
+  font-family: movie;
+  src:url(28DaysLater.ttf);
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif; /* requirement 1 */
+  background-color: lightblue; /* requirement 2 */
+  color: #223b12; /* requirement 3 */
+  font-size: 12px; /* requirement 4 */
+}
+
+p.in_yo_face {                /* requirement 5 */
+  background-color: pink; /* <-- requirement 11 */
+  color: yellow;
+  font-size: 20px;
+  font-weight: bold;   /* <-- requirement 12 */
+}
+
+p.micro {
+  font-size: 2px;
+}
+
+p.mini {
+  font-size: 7px;
+}
+
+p.gross {
+  background-color: green;
+  color: brown;
+  font-size: 18px;
+}                             /* end requirement 5 */
+
+#first_title {  /* requirement 6 */
+  font-size: 26px;
+  font-family: movie;
+}
+
+h1, h2 {    /* requirement 7 */
+  color: blue;
+}
+
+body.purple {   /* requirement 8 */
+  background-color: purple;
+}
+
+img {    /* requirement 9 */
+  height: 10vw;
+  width: 10vw;
+}
+
+h1 {   /* requirement 10 */
+  border-bottom-color: black;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+
+}

@@ -1,0 +1,64 @@
+
+ /*
+ Filename: jello.css
+ Author: Brandon Boynton
+ Create Date: 23 Mar 2018
+ Purpose: Show off column webpage with stuff from the jello assignment
+ */
+
+body {
+  display: table-cell;
+  background-color: #1C1C1C;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #D6D6D6;
+}
+
+.logo {
+  width: 250px; /* Requirement 8 - width */
+  position: static; /* Requirement 7 */
+}
+
+#main {
+  display: table-cell;
+  margin-left: 100px;
+  margin-right: 400px;
+}
+
+aside {
+  display: table-cell;
+  margin-right: 100px; /* Requirement 8 - margin */
+  background-color: #D1D1D1;
+  float: right; /* Requirement 8 - float */
+  width: 250px;
+  color:black;
+}
+
+.inner_sidebar {
+  padding: 25px;
+}
+
+.center { /* Requirement 8 - class */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Requirement 8 - text align */
+}
+
+header {
+  display: table-cell;
+  margin-bottom: 50px;
+}
+
+footer {
+  display: table-cell;
+  background-color: black;
+  padding: 15px; /* Requirement 8 - padding */
+}
+
+div#tableContainer {
+  display: table;
+}
+
+div#rowContainer{
+  display: table-row;
+}
