@@ -1,0 +1,90 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #FEF1E6;
+}
+
+header {
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  margin: 0px;
+  padding-left: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #4a4a4a;
+  color: white;
+  text-align: right;
+  vertical-align: center;
+}
+
+.nav-links {
+  color: white;
+  text-decoration: none;
+  padding-top: 30px;
+}
+
+.nav-links:hover {
+  color:lightgray;
+}
+
+.nav-container {
+  padding-top: 15px;
+  padding-right: 50px;
+}
+
+h2, p {
+}
+
+.content {
+  margin: 0;
+  padding: 3%;
+  background-color: #FEF1E6;
+}
+
+.answer {
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+#pre {
+	width: 100%;
+	padding: 0;
+  padding-top: 20px;
+	margin: 0;
+	overflow: auto;
+	overflow-y: hidden;
+	font-size: 12px;
+	line-height: 20px;
+	background: white;
+	border: 1px solid #777;
+}
+
+.sidebar {
+  background-color: orange;
+  border-radius: 15px;
+  margin-top:65px;
+  padding-top: 15px;
+  color: white;
+  font-size: 20px;
+  font-
+}
+
+.sidebar ul {
+  font-size:12px;
+  margin-left: -25px;
+}
+
+.sections {
+  margin-top: 75px;
+}
+
+.license {
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+  margin-left: 100px;
+  margin-right: 100px;
+}

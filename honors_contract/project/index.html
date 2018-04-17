@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <title>TinyS3</title>
+</head>
+
+<body>
+  <header>
+    <div class="row">
+      <div class="offset-col-md-1 col-md-1">
+        <a href="index.html"><img src="assets/logo.png" alt="logo" height="50"></a>
+      </div>
+      <div class="nav-container">
+        <p>
+          <a href="documentation.html" class="nav-links">Documentation</a>&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="contribute.html" class="nav-links">Contribute</a>&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="license.html" class="nav-links">License</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <div class="content">
+    <div class="col-md-8">
+      <h2>What is TinyS3?</h2>
+      <p class="answer">
+        A simple Python S3 upload library. Inspired by one of our favorite packages, <a href="http://docs.python-requests.org/en/master/">requests</a>. Tinys3 is used at Smore to upload more than 1.5 million keys to S3 every month. This package is easy to set up and easy to use, making file transfers from S3 easier than ever.
+      </p>
+      <br>
+      <h2>How does it work?</h2>
+      <p class="answer">
+        Create a tinsyS3 connection object using your S3 Access Key and S3 Secret Key. Create a file object with the file you'd like to upload. Pass the upload file to the tinyS3 object and find it on S3.
+      </p>
+      <pre id="pre">
+        import tinys3
+
+        conn = tinys3.Connection(S3_ACCESS_KEY,S3_SECRET_KEY,tls=True)
+
+        f = open('some_file.zip','rb')
+        conn.upload('some_file.zip',f,'my_bucket')
+      </pre>
+      <br>
+      <h2>Why use it?</h2>
+      <p class="answer">
+        Not only is TinyS3 easy to implement, but it is much more lightweight than the traditional <code>boto</code> package. Rather than downloading and importing countless unneccesary tools through <code>boto</code>, you can import one single package for all of your S3 upload and download needs.
+      </p>
+      <br>
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-2 sidebar">
+      <p>
+        Stable version: <br><a href="https://github.com/smore-inc/tinys3">1.2.1</a>
+        <br>
+        <br>
+        Latest improvements:
+        <ul>
+          <li>Fixed bug occuring when uploading very large files.</li>
+          <li>Fixed bug occuring when attempting to connect to S3 with TLS connection.</li>
+          <li>Added SSL support.</li>
+          <li>Added ability to modify S3 metadata through TinyS3.</li>
+        </ul>
+        <br>
+        Primary Contributors:
+        <br><a href="https://github.com/shlomiatar">Schlomiatar</a>
+        <br><a href="https://github.com/scylardor">Scylardor</a>
+      </p>
+    </div>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <title>TinyS3</title>
+</head>
+
+<body>
+  <header>
+    <div class="row">
+      <div class="offset-col-md-1 col-md-1">
+        <a href="index.html"><img src="assets/logo.png" alt="logo" height="50"></a>
+      </div>
+      <div class="nav-container">
+        <p>
+          <a href="documentation.html" class="nav-links">Documentation</a>&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="contribute.html" class="nav-links">Contribute</a>&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="license.html" class="nav-links">License</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <div class="row">
+
+  </div>
+  <div class="col-md-1"></div>
+  <div class="col-md-2 sections">
+    <a href="#features">Features</a><br>
+    <a href="#installation">Installation</a><br>
+    <a href="#usage">Usage</a><br>
+    <a href="#copy-keys">Copying Keys</a><br>
+    <a href="#updating-metadata">Updating Metadata</a><br>
+    <a href="#deleting-keys">Deleting Keys</a><br>
+    <a href="#listing-keys">Listing Keys</a><br>
+    <a href="#connection-pool">Connection Pool</a>
+  </div>
+  <div class="content col-md-8">
+    <h2>Tinys3 - Quick and minimal S3 uploads for Python</h2>
+    <p>A simple Python S3 upload library. Inspired by one of my favorite packages,<a href="http://docs.python-requests.org/en/latest/"> requests</a>.</p>
+    <p>tinys3 is used at <a href="https://www.smore.com">Smore</a> to upload more than 1.5 million keys to S3 every month.</p>
+    <p>Usage example:</p>
+    <pre>
+    import tinys3
+    conn = tinys3.Connection(S3_ACCESS_KEY, S3_SECRET_KEY, tls=True, endpoint='s3-eu-west-1.amazonaws.com')
+
+    f = open('some_file.zip','rb')
+    conn.upload('some_file.zip',f,'my_bucket')
+    </pre>
+    <h2 id="features">Features</h2>
+    <ul>
+      <li>Get files from S3</li>
+      <li>Upload files to S3</li>
+      <li>Copy keys inside/between buckets</li>
+      <li>Delete keys</li>
+      <li>Update key metadata</li>
+      <li>List keys in a bucket</li>
+      <li>Simple way to set key as public or setting Cache-Control and Content-Type headers.</li>
+      <li>Pool implementation for fast multi-threaded actions</li>
+    </ul>
+    <h2>Support</h2>
+    <ul>
+      <li>Python 2.6</li>
+      <li>Python 2.7</li>
+      <li>Python 3.2</li>
+      <li>Python 3.3</li>
+      <li>PyPy</li>
+    </ul>
+    <h2 id="installation">Installation</h2>
+    <pre><code>$ pip install tinys3</code></pre>
+    <p>Or if you're using easy_install:</p>
+    <pre><code>$ easy_install tinys3</code></pre>
+    <h1 id="usage">Usage</h1>
+    <h2>Uploading files to S3</h2>
+    <p>Uploading a single file:</p>
+    <pre>
+    import tinys3
+
+    # Creating a simple connection
+    conn = tinys3.Connection(S3_ACCESS_KEY,S3_SECRET_KEY)
+
+    # Uploading a single file
+    f = open('some_file.zip,'rb')
+    conn.upload('some_file.zip',f,'my_bucket')
+    </pre>
+    <p>Some more options for the connection:</p>
+    <pre>
+    # Specifying a default bucket
+    conn = tinys3.Connection(S3_ACCESS_KEY,S3_SECRET_KEY,default_bucket='my_bucket')
+
+    # So we could skip the bucket parameter on every request
+
+    f = open('some_file.zip','rb')
+    conn.upload('some_file.zip',f)
+
+    # Controlling the use of TLS
+    conn = tinys3.Connection(S3_ACCESS_KEY,S3_SECRET_KEY,tls=True)
+    </pre>
+    <p>Specifying a different endpoint</p>
+    <pre>
+    conn = tinys3.Connection(S3_ACCESS_KEY,S3_SECRET_KEY,endpoint='s3-website-us-west-2.amazonaws.com'</span>)</pre>
+    <p>Setting expiry headers.</p>
+    <pre>
+    # File will be stored in cache for one hour
+    conn.upload('my_awesome_key.zip',f,bucket='sample_bucket',
+                expires=3600)
+
+    # Passing 'max' as the value to 'expires' will make it cachable for a year
+    conn.upload('my_awesome_key.zip',f,bucket='sample_bucket',
+                expires='max')
+
+    # Expires can also handle timedelta object
+    >from datetime >import timedelta
+
+    t = timedelta(weeks=5)
+    # File will be stored in cache for 5 weeks
+    conn.upload('my_awesome_key.zip',f,bucket='sample_bucket',
+                expires=t)
+    </pre>
+    <p>tinys3 will try to guess the content type from the key (using the mimetypes package), but you can override it:</p>
+    <pre>conn.upload('my_awesome_key.zip',f,bucket='sample_bucket',
+                content_type='application/zip')
+    </pre>
+    <p>Setting additional headers is also possible by passing a dict to the headers argument:</p>
+    <pre>conn.upload('my_awesome_key.zip',f,bucket='sample_bucket',
+                headers={
+                'x-amz-storage-class': 'REDUCED_REDUNDANCY'
+                })
+    </pre>
+    <p>For more information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUT.html">Amazon's S3 Documentation</a></p>
+    <h2 id="copy-keys">Copy keys inside/between buckets</h2>
+    <p>Use the 'copy' method to copy a key or update metadata.</p>
+    <pre>
+    # Simple copy between two buckets
+    conn.copy('source_key.jpg','source_bucket','target_key.jpg','target_bucket')
+
+    # No need to specify the target bucket if we're copying inside the same bucket
+    conn.copy('source_key.jpg','source_bucket','target_key.jpg')
+
+    # We could also update the metadata of the target file
+    conn.copy('source_key.jpg','source_bucket','target_key.jpg','target_bucket',
+                metadata={ 'x-amz-storage-class': 'REDUCED_REDUNDANCY'})
+
+    # Or set the target file as private
+    conn.copy('source_key.jpg','source_bucket','target_key.jpg','target_bucket',
+                public=False)</pre>
+    <h2 id="updating-metadata">Updating metadata</h2>
+    <pre>
+    # Updating metadata for a key
+    conn.update_metadata('key.jpg',{ 'x-amz-storage-class': 'REDUCED_REDUNDANCY'},'my_bucket')
+
+    # We can also change the privacy of a file, without updating it's metadata
+    conn.update_metadata('key.jpg',bucket='my_bucket',public=False)
+    </pre>
+    <h2 id="deleting-keys">Deleting keys</h2>
+    <pre>
+    # Deleting keys is simple
+    conn.delete('key.jpg','my_bucket')
+    </pre>
+    <h2 id="listing-keys">Listing keys</h2>
+    <p>tinys3 will try to use lxml if it's available, otherwise it will fallback to xml python module (slower and not secure against maliciously constructed data)</p>
+    <pre>
+    # This will return an iterator over the metadata of the files starting with 'prefix' in 'my_bucket'
+    # The iterator will yield dicts with the following keys: key, etag, size, last_modified, storage_class
+    conn.list('prefix', 'my_bucket')
+    </pre>
+    <h2 id="connection-pool">Using tinys3's Connection Pool</h2>
+    <p>Creating a pool:</p>
+    <pre>
+    pool = tinys3.Pool(S3_ACCESS_KEY,S3_SECRET_KEY)
+    </pre>
+    <p>The pool can use the same parameters as Connection:</p>
+    <pre>
+    pool = tinys3.Pool(S3_ACCESS_KEY,S3_SECRET_KEY,tls=True, default_bucket='my_bucket')
+    </pre>
+    <p>The pool uses 5 worker threads by default. The 'size' parameter allows us to override it:</p>
+    <pre>
+    pool = tinys3.Pool(S3_ACCESS_KEY,S3_SECRET_KEY,size=25)
+    </pre>
+    <p>Using the pool to perform actions:</p>
+    <pre>
+    # Let's use the pool to delete a file
+    r = pool.delete('a_key_to_delete.zip','my_bucket')
+    Future at 0x2c8de48L state=pending
+
+    # Futures are the standard python implementation of the promise pattern
+    # You can read more about them here:
+    # http://docs.python.org/3.3/library/concurrent.futures.html#future-objects
+
+    # Did we finish?
+    r.done()
+    False
+
+    # Block until the response is completed
+    r.result()
+    Response [200]
+
+    # Block until completed with a timeout
+    # If the response is not completed until the timeout has passed, a TimeoutError will be raised
+    r.result(timeout=120)
+    Response [200]</pre>
+    <p>Using as_completed and all_completed</p>
+    <pre>
+    # First we'll create a lot of async requests
+     requests = []
+     for i in range(100)
+         requests.append(pool.delete('key' + str(i), 'my_bucket'))
+
+    # The helper methods as_completed and all_completed helps us work
+    # with multiple Future objects
+
+    # This will block until all the requests are completed
+    # The results are the responses themselves, without the Future wrappers
+     pool.all_completed(requests)
+    [Response [200], ... ]
+
+    # The as_completed generator will yield on every completed request.
+     for r in pool.as_completed(requests)
+         # r is the response object itself, without the Future wrapper
+         print r
+    </pre>
+  </div>
+
+</body>
+
+</html>
