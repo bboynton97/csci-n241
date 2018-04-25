@@ -1,3 +1,4 @@
+/* Give the whole thing a consistant backgound color */
 html, body
 {
     margin: 0;
@@ -6,6 +7,7 @@ html, body
     background-color: #F6F6F6;
 }
 
+/* Create a constistant header for every page to share */
 header {
   top: 0px;
   left: 0px;
@@ -31,15 +33,18 @@ header {
   padding-right: 50px;
 }
 
+/* Add nice padding arround content so it's not directly next to the edge */
 .content {
   margin: 5%;
 }
 
+/* Set customer font which is downloaded in index.html */
 .slogan {
   font-family: Lobster;
   color:red;
 }
 
+/* Nice div styling for a separate box */
 .donations {
   background-color: lightblue;
   color:white;
@@ -51,6 +56,7 @@ header {
   padding-right: 15px;
 }
 
+/* Make lists pretty */
 ol {
     list-style-type: none;
     list-style-type: decimal !ie;
@@ -149,7 +155,24 @@ article {
 }
 
 article:hover {
-  transition: all 0.1s;
-  font-size: 20px;
-  box-shadow: 0px 0px 10px #888888;
+  color:black;
+  background-color: black;
+}
+
+/* This stuff is overrided in index.html */
+blockquote {
+  background-color: black;
+  color:black;
+}
+blockquote:before {
+  color:black;
+}
+blockquote p {
+  color:black;
+  background-color: black;
+}
+
+dl {
+  background-color: white;
+  padding: 15px;
 }
