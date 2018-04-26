@@ -90,6 +90,7 @@ ol > li:before {
     counter-increment: li-counter;
 }
 
+/* Make table pretty */
 table {
 	width:100%;
   border-color: black;
@@ -121,6 +122,7 @@ td {
   text-align: center;
 }
 
+/* Different colors for different topics */
 .issue {
   background-color: #EDEDED;
 }
