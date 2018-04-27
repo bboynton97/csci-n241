@@ -1,3 +1,10 @@
+<!--
+Author: Brandon Boynton
+Date: April 4th, 2018
+CSCI-N241
+Honors Contract Project
+Tested in Safari, Chrome and Firefox
+ -->
 <!doctype html>
 <html lang="en">
 
@@ -38,14 +45,14 @@
   </div>
   <div class="col-md-1"></div>
   <div class="col-md-2 sections">
-    <a href="#features">Features</a><br>
-    <a href="#installation">Installation</a><br>
-    <a href="#usage">Usage</a><br>
-    <a href="#copy-keys">Copying Keys</a><br>
-    <a href="#updating-metadata">Updating Metadata</a><br>
-    <a href="#deleting-keys">Deleting Keys</a><br>
-    <a href="#listing-keys">Listing Keys</a><br>
-    <a href="#connection-pool">Connection Pool</a>
+    <a href="#features" class="section">Features</a><br>
+    <a href="#installation" class="section">Installation</a><br>
+    <a href="#usage" class="section">Usage</a><br>
+    <a href="#copy-keys" class="section">Copying Keys</a><br>
+    <a href="#updating-metadata" class="section">Updating Metadata</a><br>
+    <a href="#deleting-keys" class="section">Deleting Keys</a><br>
+    <a href="#listing-keys" class="section">Listing Keys</a><br>
+    <a href="#connection-pool" class="section">Connection Pool</a>
   </div>
   <div class="content col-md-8">
     <h2>Tinys3 - Quick and minimal S3 uploads for Python</h2>
@@ -110,7 +117,8 @@
     </pre>
     <p>Specifying a different endpoint</p>
     <pre>
-    conn = tinys3.Connection(S3_ACCESS_KEY,S3_SECRET_KEY,endpoint='s3-website-us-west-2.amazonaws.com'</span>)</pre>
+    conn = tinys3.Connection(S3_ACCESS_KEY,S3_SECRET_KEY,endpoint='s3-website-us-west-2.amazonaws.com')
+    </pre>
     <p>Setting expiry headers.</p>
     <pre>
     # File will be stored in cache for one hour
@@ -231,6 +239,10 @@
          # r is the response object itself, without the Future wrapper
          print r
     </pre>
+
+    <br><br>
+    <p>Happy coding!</p>
+    <img src="http://i.imgur.com/kvUU7.gif" alt="happy coding" height="300">
   </div>
 
 </body>

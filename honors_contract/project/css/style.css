@@ -1,10 +1,13 @@
+/* Put a background on everything and set a new default font */
 html, body {
   margin: 0;
   padding: 0;
+  /* Example of typography */
   font-family: sans-serif;
   background-color: #FEF1E6;
 }
 
+/* Create a generic header for each page */
 header {
   top: 0px;
   left: 0px;
@@ -34,21 +37,21 @@ header {
   padding-right: 50px;
 }
 
-h2, p {
-}
-
+/* Make content have a buffer so it's not right next to the edge of the screen */
 .content {
   margin: 0;
   padding: 3%;
   background-color: #FEF1E6;
 }
 
+/* Q&A stuff */
 .answer {
   background-color: white;
   border-radius: 5px;
   padding: 10px;
 }
 
+/* Make code look decent */
 #pre {
 	width: 100%;
 	padding: 0;
@@ -62,29 +65,33 @@ h2, p {
 	border: 1px solid #777;
 }
 
-.sidebar {
-  background-color: orange;
-  border-radius: 15px;
-  margin-top:65px;
-  padding-top: 15px;
-  color: white;
-  font-size: 20px;
-  font-
-}
-
-.sidebar ul {
-  font-size:12px;
-  margin-left: -25px;
-}
-
 .sections {
   margin-top: 75px;
 }
 
+/* CSS rollover effect */
+.section:hover {
+  font-size: 16px;
+  background-color: #ddd;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Give license stuff a standard look */
 .license {
   background-color: white;
   border-radius: 5px;
   padding: 10px;
   margin-left: 100px;
   margin-right: 100px;
+}
+
+blockquote {
+  background-color: #eee;
+  text-align: center;
+  padding: 25px;
+  font-size: 20px;
+  font-style: italic;
 }

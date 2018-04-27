@@ -1,3 +1,10 @@
+<!--
+Author: Brandon Boynton
+Date: April 4th, 2018
+CSCI-N241
+Honors Contract Project
+Tested in Safari, Chrome and Firefox
+ -->
 <!doctype html>
 <html lang="en">
 
@@ -14,7 +21,28 @@
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="js/jquery.prettySocial.min.js"></script>
+
   <title>TinyS3</title>
+
+  <!-- Embedded CSS -->
+  <style>
+  .sidebar {
+    background-color: orange;
+    border-radius: 15px;
+    margin-top:65px;
+    padding-top: 15px;
+    color: white;
+    font-size: 20px;
+  }
+
+  .sidebar ul {
+    font-size:12px;
+    margin-left: -25px;
+  }
+  </style>
 </head>
 
 <body>
@@ -58,25 +86,53 @@
         Not only is TinyS3 easy to implement, but it is much more lightweight than the traditional <code>boto</code> package. Rather than downloading and importing countless unneccesary tools through <code>boto</code>, you can import one single package for all of your S3 upload and download needs.
       </p>
       <br>
+      <h2>What are other people saying?</h2>
+      <blockquote>
+        "TinyS3 is used to securely upload and download machine learning models at Vemity. We constantly spin up and shut down worker instances that need to be lightweight, so it's important that we use a small framework like TinyS3 instead of something heavier like <code>boto</code>."
+      </blockquote>
+      <br>
     </div>
     <div class="col-md-1"></div>
-    <div class="col-md-2 sidebar">
-      <p>
-        Stable version: <br><a href="https://github.com/smore-inc/tinys3">1.2.1</a>
-        <br>
-        <br>
-        Latest improvements:
-        <ul>
-          <li>Fixed bug occuring when uploading very large files.</li>
-          <li>Fixed bug occuring when attempting to connect to S3 with TLS connection.</li>
-          <li>Added SSL support.</li>
-          <li>Added ability to modify S3 metadata through TinyS3.</li>
-        </ul>
-        <br>
-        Primary Contributors:
-        <br><a href="https://github.com/shlomiatar">Schlomiatar</a>
-        <br><a href="https://github.com/scylardor">Scylardor</a>
-      </p>
+    <!-- Overriding style -->
+    <div class="col-md-2">
+      <div class="sidebar" style="padding:50px;">
+        <p>
+          Stable version: <br><a href="https://github.com/smore-inc/tinys3">1.2.1</a>
+          <br>
+          <br>
+          Latest improvements:
+          <ul>
+            <li>Fixed bug occuring when uploading very large files.</li>
+            <li>Fixed bug occuring when attempting to connect to S3 with TLS connection.</li>
+            <li>Added SSL support.</li>
+            <li>Added ability to modify S3 metadata through TinyS3.</li>
+          </ul>
+          <br>
+          Primary Contributors:
+          <br><a href="https://github.com/shlomiatar">Schlomiatar</a>
+          <br><a href="https://github.com/scylardor">Scylardor</a>
+        </p>
+      </div>
+
+      <br>
+      <!-- JS Plugin! -->
+      <div class="social-container">
+    		<div class="links">
+    			<a href="#" data-type="twitter" data-url="http://cs.iupui.edu/~brboynto/n241/honors_contract/project/index.html" data-description="Check out TinyS3 for simplifying the upload and download of files from AWS S3!" data-via="bboynton97" class="prettySocial fa fa-twitter"></a>
+
+    			<a href="#" data-type="facebook" data-url="http://cs.iupui.edu/~brboynto/n241/honors_contract/project/index.html" data-title="TinyS3" data-description="Check out TinyS3 for simplifying the upload and download of files from AWS S3!" data-media="http://cs.iupui.edu/~brboynto/n241/honors_contract/project/assets/logo.png" class="prettySocial fa fa-facebook"></a>
+
+    			<a href="#" data-type="googleplus" data-url="http://cs.iupui.edu/~brboynto/n241/honors_contract/project/index.html" data-description="Check out TinyS3 for simplifying the upload and download of files from AWS S3!" class="prettySocial fa fa-google-plus"></a>
+
+    			<a href="#" data-type="pinterest" data-url="http://cs.iupui.edu/~brboynto/n241/honors_contract/project/index.html" data-description="Check out TinyS3 for simplifying the upload and download of files from AWS S3!" data-media="http://cs.iupui.edu/~brboynto/n241/honors_contract/project/assets/logo.png" class="prettySocial fa fa-pinterest"></a>
+
+    			<a href="#" data-type="linkedin" data-url="http://cs.iupui.edu/~brboynto/n241/honors_contract/project/index.html" data-title="TinyS3" data-description="Check out TinyS3 for simplifying the upload and download of files from AWS S3!" data-via="bboynton97" data-media="http://cs.iupui.edu/~brboynto/n241/honors_contract/project/assets/logo.png" class="prettySocial fa fa-linkedin"></a>
+    		</div>
+
+    		<script type="text/javascript" class="source">
+    			$('.prettySocial').prettySocial();
+    		</script>
+  	  </div>
     </div>
   </div>
 
