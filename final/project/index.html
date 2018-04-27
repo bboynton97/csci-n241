@@ -11,6 +11,7 @@ Tested in Safari, Chrome and Firefox
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="css/popup.css">
 
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -24,7 +25,54 @@ Tested in Safari, Chrome and Firefox
   <!-- Get lobster font -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lobster" />
 
+  <!-- Import jquery for the plugin -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+  <!-- JS Plugin -->
+  <script>
+  $(document).ready(function () {
+
+  	// if user clicked on button, the overlay layer or the dialogbox, close the dialog
+  	$('a.btn-ok, #dialog-overlay, #dialog-box').click(function () {
+  		$('#dialog-overlay, #dialog-box').hide();
+  		return false;
+  	});
+
+  	// if user resize the window, call the same function again
+  	// to make sure the overlay fills the screen and dialogbox aligned to center
+  	$(window).resize(function () {
+
+  		//only do it if the dialog box is not hidden
+  		if (!$('#dialog-box').is(':hidden')) popup();
+  	});
+
+
+  });
+
+  //Popup dialog
+  function popup(message) {
+
+  	// get the screen height and width
+  	var maskHeight = $(document).height();
+  	var maskWidth = $(window).width();
+
+  	// calculate the values for center alignment
+  	var dialogTop =  (maskHeight/3) - ($('#dialog-box').height());
+  	var dialogLeft = (maskWidth/2) - ($('#dialog-box').width()/2);
+
+  	// assign values to the overlay and dialog box
+  	$('#dialog-overlay').css({height:maskHeight, width:maskWidth}).show();
+  	$('#dialog-box').css({top:dialogTop, left:dialogLeft}).show();
+
+  	// display the message
+  	// $('#dialog-message').html(message);
+
+  }
+  </script>
+
   <style>
+  /* This overrides main.css */
+  /* Embedded css */
     blockquote {
       background: white;
       border-left: 10px solid #ccc;
@@ -48,7 +96,7 @@ Tested in Safari, Chrome and Firefox
   <title>Candidate Rick</title>
 </head>
 
-<body>
+<body onload="popup('')">
   <header>
     <div class="row">
       <div class="offset-col-md-1 col-md-1">
@@ -65,10 +113,26 @@ Tested in Safari, Chrome and Firefox
     </div>
   </header>
 
+  <!-- JS plugin popup -->
+  <div id="dialog-overlay"></div>
+  <div id="dialog-box">
+  	<div class="dialog-content">
+  		<div id="dialog-message">
+        <h2>Warning!</h2>
+        <p>
+          By having visited this site, our Terms of Service have now contractually obligated you to vote for Commander Rick. As per the TOS, violating the agreement results in immediate dissolution of the offender's life.
+        </p>
+      </div>
+  		<a href="#" class="button">Close</a>
+  	</div>
+  </div>
+
+<!-- Primary content -->
   <div class="content">
     <h1>Commander Rick for Galactic Federation President</h1>
     <br><br>
     <div class="col-md-4">
+      <!-- Blockquotes -->
       <blockquote style="margin-top:30px;">It is high time that the Citadell of Ricks becomes the dominant force in the multiverse. We can either do that through <i>business</i> like children, or through force, like men.</blockquote>
       <blockquote style="margin-top:30px;">The Blemflark will never be reduced to a value of $0 under my watch. No spy or mad-scientist will be able to penetrate our security measures.</blockquote>
       <blockquote style="margin-top:30px;">After protecting the Citadell of Ricks for millenia and having served on the Council of Ricks, I am the most qualified candidate to lead the Galactic Federation.</blockquote>

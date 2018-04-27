@@ -27,7 +27,7 @@ Tested in Safari, Chrome and Firefox
   <header>
     <div class="row">
       <div class="offset-col-md-1 col-md-1">
-        <a href="index.html"><img src="assets/logo.png" alt="logo" height="50px"></a>
+        <a href="index.html"><img src="assets/logo.png" alt="logo" height="50"></a>
       </div>
       <div class="nav-container">
         <p>
@@ -42,31 +42,55 @@ Tested in Safari, Chrome and Firefox
 
   <div class="col-md-1"></div>
   <div class="col-md-2" style="padding-top:50px;">
-    <img src="http://www.pollutionprobe.org/wp-content/uploads/Donate-Icon-Single.png" alt="donate" width="150px">
+    <img src="http://www.pollutionprobe.org/wp-content/uploads/Donate-Icon-Single.png" alt="donate" width="150">
   </div>
-  <div class="col-md-8" style="padding-top:50px;">
-    <form>
-      <formset>
+  <div class="col-md-4" style="padding-top:50px;">
+    <!-- Required form -->
+    <form action="mailto:user@example.com" method="post" enctype="text/plain">
+      <fieldset id="info">
         <legend>Your Information</legend>
         <label>Name:<input type="text" name="username" id="username" placeholder="Elon Musk" style="margin-left:20px;"></label><br>
         <label>Email:<input type="text" name="email" id="email" placeholder="musk@tesla.com" style="margin-left:21px;"></label><br>
-        <label>Street:<input type="text" name="country" id="country" placeholder="420 SpaceX Lane" style="margin-left:19px;"></label><br>
-        <label>City:<input type="text" name="country" id="country" placeholder="Elonopolis" style="margin-left:32px;"></label><br>
-        <label>Zip:<input type="text" name="country" id="country" placeholder="69420" style="margin-left:37px;"></label><br>
+        <label>Street:<input type="text" name="street" id="street" placeholder="420 SpaceX Lane" style="margin-left:19px;"></label><br>
+        <label>City:<input type="text" name="city" id="city" placeholder="Elonopolis" style="margin-left:32px;"></label><br>
+        <label>Zip:<input type="text" name="zip" id="zip" placeholder="69420" style="margin-left:37px;"></label><br>
         <label>Country:<input type="text" name="country" id="country" placeholder="Muskistan" style="margin-left:5px;"></label><br>
-      </formset>
+      </fieldset>
       <br>
-      <formset>
+      <fieldset id="payment">
         <legend>Payment Method</legend>
-        <label>Credit Card Number:<input type="text" name="reqid" id="reqid" placeholder="4242 4242 4242 4242" style="margin-left:15px;"></label><br>
-        <label>Expiration:<input type="text" name="reqid" id="reqid" placeholder="12/22" style="margin-left:15px;"></label><br>
-        <label>CSV:<input type="text" name="reqid" id="reqid" placeholder="651" style="margin-left:15px;"></label><br>
-      </formset>
-      <label>How much would you like to donate?<input type="text" name="reqid" id="reqid" placeholder="$5" style="margin-left:15px;"></label><br>
+        <label>Credit Card Number:<input type="text" name="cc" id="c" placeholder="4242 4242 4242 4242" style="margin-left:15px;"></label><br>
+        <label>Expiration:<input type="text" name="exp" id="exp" placeholder="12/22" style="margin-left:15px;"></label><br>
+        <label>CSV:<input type="text" name="csv" id="csv" placeholder="651" style="margin-left:15px;"></label><br>
+      </fieldset>
+      <label>How much would you like to donate?<input type="text" name="amount" id="amount" placeholder="$5" style="margin-left:15px;"></label><br>
 
-      <input type="Submit" value="Donate!">
-      <input type="Reset" value="Reset Form">
+      <input type="Submit" name="submit" value="Donate!">
+      <input type="Reset" name="reset" value="Reset Form">
     </form>
+  </div>
+  <div class="col-md-4" style="padding-top:100px; padding-left:50px;">
+    <!-- Required ul -->
+    <label>What does your money go towards?</label>
+    <ul>
+      <li>Greasing palms</li>
+      <li>Buying Rick stuff</li>
+      <li>Lots of food</li>
+    </ul>
+    <br><br>
+    <label>Political Terms to Know</label>
+    <br>
+    <!-- Required dl -->
+    <dl>
+      <dt>Schleem</dt>
+      <dd>Product invented by Rick</dd>
+      <dt>Blemflark</dt>
+      <dd>Galactic Federation currency</dd>
+      <dt>Rick</dt>
+      <dd>Your new overlord</dd>
+      <dt>Democracy</dt>
+      <dd>What this is technically supposed to be</dd>
+    </dl>
   </div>
 </body>
 
